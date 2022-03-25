@@ -1,0 +1,42 @@
+<?php
+ echo "gil";
+?>
+<label>password :
+  <input name="password" id="password" type="password" />
+</label>
+<br>
+<label>confirm password:
+  <input type="password" name="confirm_password" id="confirm_password" /> 
+  <span id='message'></span>
+</label>
+<input type="submit" id="submit" value="submit" disabled />
+
+<p> heloo gil</p>
+
+
+<script type="text/javascript">
+function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+        document.getElementById('submit').disabled = false;
+    } else {
+        document.getElementById('submit').disabled = true;
+    }
+}
+var check = document.getElementById('confirm_password');
+
+check.onkeyup = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+    document.getElementById('submit').disabled = false;
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+    document.getElementById('submit').disabled=true;
+  }
+}
+</script>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
