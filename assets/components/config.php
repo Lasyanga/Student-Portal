@@ -7,12 +7,6 @@
      define("DB_PASSWORD", ""); 
      define("DB_DATABASE", "qcu_student"); 
 
-    /* for online database
-    define("DB_SERVER", "qcu.asianprozibot.xyz");
-    define("DB_USERNAME", "johnpaulz"); 
-    define("DB_PASSWORD", "qcurocks@@"); 
-    define("DB_DATABASE", "qcu_student"); 
-    */
 
             $conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
