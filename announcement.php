@@ -2,13 +2,13 @@
 ob_start();
 error_reporting(E_ALL);
 session_start();
-require_once('class/autoload.php');
-include('assets/components/config.php');
+// require_once('class/autoload.php');
+// include('assets/components/config.php');
 
 $role = $_SESSION['role'];
 $user_id = $_SESSION['user_id'];
 
-if (isset($_SESSION['user'])){
+// if (isset($_SESSION['user'])){
 ?>
 
 
@@ -20,22 +20,22 @@ if (isset($_SESSION['user'])){
 
 
 	<title>Student Portal | Post Announcement</title>
-	
+
 	<?php require('css.php'); ?>
 </head>
 <body style="background-color:  #cccccc;">
-	<?php 
-        include('assets/components/top_nav.php');
+	<?php
+	include('assets/components/top_nav.php');
 
-        if ($role==1) {
-            include('assets/components/admin_side_nav.php');
-        }elseif ($role == 3) {
-            include('assets/components/faculty_side_nav.php');
-        }else{      
-            include('assets/components/side_nav.php');
-        }
-    ?>
-    
+	if ($role==1) {
+		include('assets/components/admin_side_nav.php');
+	}elseif ($role == 3) {
+		include('assets/components/faculty_side_nav.php');
+	}else{
+		include('assets/components/side_nav.php');
+	}
+	?>
+
 	<div class="container mt-4 mb-5">
 		<div class="row">
 			<div class="col-lg-11" style="margin: 0 auto; float: none;">
@@ -71,7 +71,7 @@ if (isset($_SESSION['user'])){
 											<th>Title</th>
 											<th>Content</th>
 											<th>Date Posted</th>
-											<th>Status</th>	
+											<th>Status</th>
 											<th>Last Edited</th>
 											<th>Onwer</th>
 											<th>Action</th>
@@ -87,15 +87,15 @@ if (isset($_SESSION['user'])){
 
 									<tfoot>
 										<tr class="text-center">
-										<th>Title</th>
-										<th>Content</th>
-										<th>Date Posted</th>
-										<th>Status</th>								
-										<th>Last Edited</th>
-										<th>Onwer</th>
-										<th>Action</th>
+											<th>Title</th>
+											<th>Content</th>
+											<th>Date Posted</th>
+											<th>Status</th>
+											<th>Last Edited</th>
+											<th>Onwer</th>
+											<th>Action</th>
 										</tr>
-									</tfoot>						
+									</tfoot>
 
 								</table>
 
@@ -106,7 +106,7 @@ if (isset($_SESSION['user'])){
 											<th>Title</th>
 											<th>Content</th>
 											<th>Date Posted</th>
-											<th>Status</th>								
+											<th>Status</th>
 											<th>Last Edited</th>
 											<th>Action</th>
 										</tr>
@@ -114,11 +114,11 @@ if (isset($_SESSION['user'])){
 
 									<tbody>
 										<?php
-											$user_id = $_SESSION['user_id'];
+										$user_id = $_SESSION['user_id'];
 
-											$getAnnouncement = new interactDB();
+										$getAnnouncement = new interactDB();
 
-											$getAnnouncement->getAnnouncement($conn, $user_id);
+										$getAnnouncement->getAnnouncement($conn, $user_id);
 										?>
 									</tbody>
 
@@ -127,12 +127,12 @@ if (isset($_SESSION['user'])){
 											<th>Title</th>
 											<th>Content</th>
 											<th>Date Posted</th>
-											<th>Status</th>								
+											<th>Status</th>
 											<th>Last Edited</th>
 											<th>Action</th>
 										</tr>
 									</tfoot>
-									
+
 								</table>
 							<?php endif;?>
 						</div>
@@ -163,9 +163,9 @@ if (isset($_SESSION['user'])){
 </body>
 </html>
 <?php
-	}else{
-		header('location: index.php');
-	}
+	// }else{
+	// 	header('location: index.php');
+	// }
 
-	ob_flush();
+ob_flush();
 ?>
