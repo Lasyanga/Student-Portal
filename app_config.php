@@ -1,8 +1,8 @@
 <?php
-  $dbhost = "localhost";
+  $dbhost = "localhost:3307";
   $dbusername = "root";
-  $dbpassword = "root";
-  $dbname = "student-portal";
+  $dbpassword = "sql";
+  $dbname = "student_portal";
   $connstr = "mysql:host=$dbhost; dbname=$dbname;charset=utf8";
   $dboption = array(
     PDO::ATTR_ERRMODE => true,
