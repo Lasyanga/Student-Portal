@@ -12,7 +12,7 @@
         <a class="nav-link text-white" href="#">About us</a>
       </li>
       <li class="nav-item">
-        <a href="./view_login.php" class="nav-link text-white">Login</a>
+        <a href="./views/accounts/view_login.php" class="nav-link text-white">Login</a>
       </li>
     </ul>
   </div>
